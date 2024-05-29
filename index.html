@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float - Create a Course with Notion</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("nFWV26yJl_Y0Hkm8B"); // Replace with your EmailJS public key (user ID)
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">float</div>
+      </header>
+      <main>
+        <h1>Create a course with Notion.</h1>
+        <p>
+          Turn your docs in Notion into a fully operational online course in
+          minutes. All the power of a traditional course platform, built in the
+          same place you take notes.
+        </p>
+        <div class="form-container">
+          <p>Join Blake, Zack, and 2165 others on the waitlist.</p>
+          <form id="joinForm">
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Request access</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
