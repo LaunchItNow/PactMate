@@ -21,14 +21,29 @@ document
     emailjs.send("service_xgxgvdm", "template_djskq5s", templateParams).then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text);
-        alert("Request sent successfully!");
+        showNotification("Join request sent successfully!", "success");
       },
       function (error) {
         console.error("FAILED...", error);
-        alert("Failed to send request. Please try again later.");
+        showNotification(
+          "Failed to send request. Please try again later.",
+          "error"
+        );
       }
     );
 
-    // Optionally clear the form
+    // Clear the form
     document.getElementById("joinForm").reset();
   });
+
+function showNotification(message, type) {
+  const notification = document.getElementById("notification");
+  notification.textContent = message;
+  notification.classList.add(type);
+
+  // Remove notification after 5 seconds
+  setTimeout(function () {
+    notification.textContent = "";
+    notification.classList.remove(type);
+  }, 5000);
+}
